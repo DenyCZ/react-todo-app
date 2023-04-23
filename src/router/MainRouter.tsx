@@ -3,7 +3,6 @@ import { IRoute, routePublic } from '@/router/routes/routePublic'
 import AuthHOC from '@/router/routerComponents/AuthHOC'
 import { routeDashboard } from '@/router/routes/routeDashboard'
 import { CssBaseline } from '@mui/material'
-import * as React from 'react'
 import { ThemeSettingProvider } from '@/theme/theme'
 
 export const MainRouter = () => {
