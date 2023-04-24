@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { AppBar, IconButton, Stack, Toolbar, Typography, useTheme } from '@mui/material'
+import { AppBar, IconButton, Stack, Toolbar, Typography, useTheme, Link } from '@mui/material'
 import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 import { ThemeSwitchContext } from '@/theme/theme'
@@ -17,9 +17,12 @@ export const Header = () => {
                 }}
             >
                 <Stack direction={`row`} spacing={3} alignItems={`center`}>
-                    <Typography variant={'h6'} component={'div'}>
-                        React TODO list
-                    </Typography>
+                    <Link href="/" color="inherit">
+                        React todo app
+                    </Link>
+                    <Link href="/pokemon" color="inherit">
+                        Pokemon list
+                    </Link>
                 </Stack>
 
                 <IconButton sx={{ ml: 1 }} onClick={toggleColorMode} color="inherit">

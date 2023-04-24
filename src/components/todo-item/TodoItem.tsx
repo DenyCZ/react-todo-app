@@ -35,9 +35,11 @@ const TodoItem = ({ item }: TodoItemProps) => {
                         <IconButton edge="end" aria-label="delete" onClick={onDeleteClick}>
                             <DeleteIcon color="error" />
                         </IconButton>
-                        <IconButton edge="end" aria-label="delete" onClick={onFinishClick}>
-                            <CheckIcon color="success" />
-                        </IconButton>
+                        {item.state === 'active' && (
+                            <IconButton edge="end" aria-label="finish" onClick={onFinishClick}>
+                                <CheckIcon color="success" />
+                            </IconButton>
+                        )}
                     </>
                 }
             >
