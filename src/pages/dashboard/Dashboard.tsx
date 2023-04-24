@@ -1,6 +1,6 @@
 import Form from '@/components/form/Form'
+import TodoList from '@/components/todo-list/TodoList'
 import { TodoItem } from '@/components/todo-item/type/TodoItem.type'
-import { TodoList } from '@/components/todo-list/TodoList'
 import { setTodoList } from '@/reducers/todo-reducer'
 import { RootState } from '@/redux/rootReducer'
 import { useAppSelector, useAppDispatch } from '@/redux/store'
@@ -9,15 +9,15 @@ import { Container, Grid } from '@mui/material'
 import { useEffect } from 'react'
 import { shallowEqual } from 'react-redux'
 
-export const Dashboard = () => {
+const Dashboard = () => {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
         const hydrate = async () => {
             const { data, error } = await getTodoList()
-            console.log(data, error)
+
             if (error) {
-                console.log(error)
+                console.error(error)
                 return
             }
 
@@ -45,3 +45,5 @@ export const Dashboard = () => {
         </Container>
     )
 }
+
+export default Dashboard

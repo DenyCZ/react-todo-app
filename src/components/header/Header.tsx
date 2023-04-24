@@ -4,7 +4,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4'
 import Brightness7Icon from '@mui/icons-material/Brightness7'
 import { ThemeSwitchContext } from '@/theme/theme'
 
-export const Header = () => {
+const Header = () => {
     const themeMaterial = useTheme()
     const { toggleColorMode } = useContext(ThemeSwitchContext)
 
@@ -32,3 +32,5 @@ export const Header = () => {
         </AppBar>
     )
 }
+
+export default Header

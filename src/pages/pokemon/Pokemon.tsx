@@ -11,13 +11,13 @@ const modalStyle = {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 400,
-    bgcolor: 'white',
+    bgcolor: 'background.paper',
     boxShadow: 24,
     outline: 'none',
     p: 4,
 }
 
-export const Pokemon = () => {
+const PokemonPage = () => {
     const [nextUri, setNextUri] = useState('https://pokeapi.co/api/v2/pokemon?limit=40')
     const [results, setResults] = useState<PokemonBase[]>([])
     const [loading, setLoading] = useState(false)
@@ -35,6 +35,7 @@ export const Pokemon = () => {
     useEffect(() => {
         const fetchPokemons = async () => {
             const { data } = await fetchData()
+
             setResults(data.results)
             setNextUri(data.next)
         }
@@ -63,20 +64,15 @@ export const Pokemon = () => {
 
     return (
         <Container maxWidth="xl" sx={{ padding: '1rem' }}>
-            <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-            >
+            <Modal open={open} onClose={handleClose}>
                 <Box sx={modalStyle}>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                    <Typography variant="h6" component="h2">
                         {capitalize(modalPokemon?.name ?? '')}
                     </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    <Typography sx={{ mt: 2 }}>
                         Types: {modalPokemon?.types?.map((type) => type.type.name).join(', ') ?? ''}
                     </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    <Typography sx={{ mt: 2 }}>
                         Abilities: {modalPokemon?.abilities?.map((type) => type.ability.name).join(', ') ?? ''}
                     </Typography>
                 </Box>
@@ -95,3 +91,5 @@ export const Pokemon = () => {
         </Container>
     )
 }
+
+export default PokemonPage

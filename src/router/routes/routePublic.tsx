@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { Dashboard } from '@/pages/dashboard/Dashboard'
-import { Pokemon } from '@/pages/pokemon/Pokemon'
+import Dashboard from '@/pages/dashboard/Dashboard'
+import Pokemon from '@/pages/pokemon/Pokemon'
 
 export interface IRoute {
     path: string

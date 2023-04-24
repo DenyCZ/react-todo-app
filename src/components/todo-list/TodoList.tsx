@@ -7,7 +7,7 @@ interface TodoListProps {
     items: TodoItemType[]
 }
 
-export const TodoList = ({ variant, items }: TodoListProps) => {
+const TodoList = ({ variant, items }: TodoListProps) => {
     return (
         <Card sx={{ minWidth: 275 }}>
             <CardContent>
@@ -23,3 +23,5 @@ export const TodoList = ({ variant, items }: TodoListProps) => {
         </Card>
     )
 }
+
+export default TodoList

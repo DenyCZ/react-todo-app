@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { Header } from '@/components/header/Header'
+import Header from '@/components/header/Header'
 import { Stack } from '@mui/material'
 
 export const AuthLayout = ({ children }: { children: ReactNode }) => {
